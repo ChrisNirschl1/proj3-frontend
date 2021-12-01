@@ -1,32 +1,27 @@
 [
     {
-      "id": 1,
       "user_name": "Amay",
       "user_email": "amay@amay.amay",
-      "user_password": "password1"
+      "user_password": "password12345"
     },
     {
-        "id": 2,
       "user_name": "Christian",
       "user_email": "chris@chris.chris",
-      "user_password": "password2"
+      "user_password": "password12345"
     },
     {
-        "id": 3,
       "user_name": "David",
       "user_email": "david@david.david",
-      "user_password": "password3"
+      "user_password": "password12345"
     },
     {
-        "id": 4,
       "user_name": "Chris",
       "user_email": "chris1@chris.chris",
-      "user_password": "password4"
+      "user_password": "password12345"
     },
     {
-        "id": 5,
         "user_name": "Test",
         "user_email": "test@test.test",
-        "user_password": "password5"
+        "user_password": "password12345"
     }
   ]
