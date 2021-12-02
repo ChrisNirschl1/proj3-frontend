@@ -1,6 +1,8 @@
 import "./login.css"
 
 export default function Login() {
+
+
     return (
         <div className="login">
             <div className="loginWrapper">
@@ -21,3 +23,10 @@ export default function Login() {
         </div>
     )
 }
+
+
+
+
+//function() => {
+//    fetch("http://localhost:8080/api", {email: "email.value()", password:"passwordValue()"})
+//}
