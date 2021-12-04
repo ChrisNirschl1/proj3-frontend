@@ -20,7 +20,7 @@
     "express-session": "^1.17.2",
     "helmet": "^4.6.0",
     "materialize-css": "^1.0.0-rc.2",
-    "mongoose": "^6.0.14",
+    
     "morgan": "^1.10.0",
     
     "nodemon": "^2.0.15",
