@@ -36,7 +36,7 @@ function App() {
   useEffect(() => {
     const myToken = localStorage.getItem("token");
     if (myToken) {
-      axios.get("http://localhost:8080/api/auth/profile", {
+      axios.get("http://localhost:3001/profile", {
         headers: {
           "Authorization": `Bearer ${myToken}`
         }
@@ -71,7 +71,7 @@ function App() {
 
   const handleLoginSubmit = e => {
     e.preventDefault();
-    axios.post("http://localhost:8080/api/auth/login", loginFormState).then(res => {
+    axios.post("http://localhost:3001/login", loginFormState).then(res => {
       console.log(res.data)
       setUserState({
         email: res.data.user.email,
@@ -101,22 +101,7 @@ function App() {
 
       <div>
         {!userState.email ? (
-          <div><nav>
-          <ul>
-            <button onClick={logMeOut}>Log out</button>
-            <li>
-              <Link to="/">Home</Link>
-            </li>
-            <li>
-              <Link to="/register">Register</Link>
-            </li> <li>
-              <Link to="/login">Login</Link>
-            </li>
-            <li>
-              <Link to="/profile">Profile</Link>
-            </li>
-          </ul>
-        </nav>
+          <div>
             <LoginForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} />
           </div>
         ) : (
@@ -128,10 +113,9 @@ function App() {
                   <Link to="/">Home</Link>
                 </li>
                 <li>
-                  <Link to="/register">Register</Link>
-                </li> <li>
-                  <Link to="/login">Login</Link>
+                  <Link to="/newpost">New Post</Link>
                 </li>
+               
                 <li>
                   <Link to="/profile">Profile</Link>
                 </li>
@@ -141,8 +125,7 @@ function App() {
               <Route exact path="/">
                 <Home token={token} user={userState} />
               </Route>
-              <Route exact path="/login"></Route>
-              <Route exact path="/register"></Route>
+              
               <Route exact path="/profile">
                 <Profile token={token} user={userState} />
               </Route>
