@@ -4,6 +4,7 @@ import API from "./utils/API"
 //will need useEffect for token
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
+import CreatePost from "./components/CreatePost";
 
 
 import {
@@ -143,8 +144,12 @@ function App() {
       {!userState.email ? (
 
         <div>
+          <h3>Login</h3>
           <LoginForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} />
 
+         <h2>Or</h2>
+
+          <h3>Signup</h3>
           <SignupForm submit={handleSignupSubmit} change={handleSignupChange} signupState={signupFormState} />
         </div>
       ) : (
@@ -168,6 +173,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           <Home token={token} user={userState} />
+        </Route>
+        <Route exact path="/newpost">
+          <CreatePost token={token} user={userState} />
         </Route>
 
         <Route exact path="/profile">
