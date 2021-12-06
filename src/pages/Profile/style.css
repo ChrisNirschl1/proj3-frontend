@@ -2,6 +2,15 @@
     display: flex;
 }
 
+.postContainer{
+    /* display: flex; */
+    width: 80vw;
+    flex-wrap: wrap;
+    margin: 0 auto;
+    border-radius: 10px 0;
+    border: 1px dashed grey;
+}
+
 .profileRight{
     flex: 9;
 }
