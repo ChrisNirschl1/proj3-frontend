@@ -6,12 +6,14 @@ import Rightbar from '../../components/rightbar/Rightbar'
 import "./style.css"
 import {useParams} from "react-router-dom"
 import API from "../../utils/API"
+import PostCard from "../../components/PostCard"
+import { Pets } from '@material-ui/icons'
 
-export default function Profile() {
+export default function Profile(props) {
     const [user, setUser] = useState({
         email: "",
         id: "",
-        Post: []
+        Posts: []
     })
     const {id} = useParams();
 
@@ -43,8 +45,8 @@ export default function Profile() {
                 <h4 className="profileInfoName" >Welcome to {user.email}'s page </h4>
                 <span className="profileInfoDesc" >Yo fellow humans I'm definitely not a lizard person my dudes</span>
                 </div>
-                <div>
-                    
+                <div className="postContainer">
+                {user.Posts.map(posty=><PostCard key={posty.id} songname={posty.songname} canYouDelete={props.user.id===posty.UserId} id={posty.id} canYouEdit={props.user.id===posty.UserId} token={props.token} description = {posty.description}/>)}
                 </div>
             </div>
             <div className="profileRightBottom">
