@@ -4,7 +4,8 @@ import API from "./utils/API"
 //will need useEffect for token
 import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
-import CreatePost from "./components/CreatePost";
+import Profile from "./pages/Profile";
+import MakePost from './pages/MakePost';
 
 
 import {
@@ -14,11 +15,12 @@ import {
   Link,
 } from 'react-router-dom';
 
-import Home from "./pages/Home/Home";
+import Home from "./pages/Home";
 //import Login from "./pages/login/Login";
-import Register from "./pages/Register/Register";
-import Login from "./pages/Login/Login";
-import Profile from "./pages/Profile/Profile";
+// import Register from "./pages/Register";
+// import Login from "./pages/Login";
+
+
 // import Register from "./pages/register/Register";
 
 
@@ -94,7 +96,7 @@ function App() {
       console.log(res.data)
       setUserState({
         email: res.data.user.email,
-        id: res.data.user._id
+        id: res.data.user.id
         //could need to be id
         // was res.data.user.email,
         //was _id
@@ -115,7 +117,7 @@ function App() {
         console.log(res.data)
         setUserState({
           email: res.data.user.email,
-          id: res.data.user._id
+          id: res.data.user.id
           //could need to be id
           // was res.data.user.email,
         })
@@ -147,7 +149,7 @@ function App() {
           <h3>Login</h3>
           <LoginForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} />
 
-         <h2>Or</h2>
+          <h2>Or</h2>
 
           <h3>Signup</h3>
           <SignupForm submit={handleSignupSubmit} change={handleSignupChange} signupState={signupFormState} />
@@ -165,23 +167,23 @@ function App() {
               </li>
 
               <li>
-                <Link to="/profile">Profile</Link>
+                <Link to={`/profile/${userState.id}`}>Profile</Link>
               </li>
               <button onClick={logMeOut}>Log out</button>
             </ul>
           </nav>
-      <Switch>
-        <Route exact path="/">
-          <Home token={token} user={userState} />
-        </Route>
-        <Route exact path="/newpost">
-          <CreatePost token={token} user={userState} />
-        </Route>
+          <Switch>
+            <Route exact path="/">
+              <Home token={token} user={userState} />
+            </Route>
+            <Route exact path="/newpost">
+              {token? <MakePost token={token} user={userState} />: <Home />}
+            </Route>
 
-        <Route exact path="/profile">
-          <Profile token={token} user={userState} />
-        </Route>
-      </Switch>
+            <Route exact path="/profile/:id">
+              <Profile token={token} user={userState} />
+            </Route>
+          </Switch>
         </div>)}
 
 
