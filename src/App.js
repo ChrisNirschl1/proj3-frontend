@@ -6,6 +6,7 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Profile from "./pages/Profile";
 import MakePost from './pages/MakePost';
+import Topbar from "./components/topbar/Topbar"
 
 
 import {
@@ -156,22 +157,9 @@ function App() {
         </div>
       ) : (
         <div>
-          <nav>
-            <ul>
-
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/newpost">New Post</Link>
-              </li>
-
-              <li>
-                <Link to={`/profile/${userState.id}`}>Profile</Link>
-              </li>
-              <button onClick={logMeOut}>Log out</button>
-            </ul>
-          </nav>
+          
+          <Topbar user={userState.id}/>
+         <span> <button onClick={logMeOut}>Log out</button></span>
           <Switch>
             <Route exact path="/">
               <Home token={token} user={userState} />

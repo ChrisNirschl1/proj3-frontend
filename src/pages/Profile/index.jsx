@@ -31,7 +31,7 @@ export default function Profile(props) {
 
             {!user.email ? <h1>No user</h1> : (
                 <div>
-        <Topbar />
+        {/* <Topbar /> */}
         <div className="profile">
         <Sidebar />
             <div className="profileRight">
