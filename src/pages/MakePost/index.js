@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import "./style.css"
 import {useHistory} from "react-router-dom"
 import API from '../../utils/API'
+import Topbar from '../../components/topbar/Topbar'
 
 export default function MakePost(props) {
     const [newPost, setNewPost] = useState({
@@ -38,6 +39,7 @@ const history = useHistory();
     // value is derived from state now
     return (
         <div className="MakePost">
+            {/* <div><Topbar /></div> */}
             <form onSubmit={handleFormSubmit}>
                 <input onChange={handleInputChange} value ={newPost.songname} name="songname" placeholder="What Song"/> 
                 

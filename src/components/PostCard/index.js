@@ -21,8 +21,8 @@ export default function PostCard(props) {
     // }
     return (
         <div className="PostCard">
-            <h3>{props.songname}</h3>
-            <p>What're they thinking: {props.description}</p>
+            <h2>{props.songname}</h2>
+            <p><strong>What're they thinking:</strong> {props.description}</p>
            {props.userId&&<Link to={`/profile/${props.userId}`}>Meet the poster</Link>}
            {props.canYouEdit&&!showEditForm &&<button onClick={()=>setShowEditForm(true)}>Edit your post</button>}
            {props.canYouEdit&&showEditForm &&<button onClick={()=>setShowEditForm(false)}>Remove Edit</button>}

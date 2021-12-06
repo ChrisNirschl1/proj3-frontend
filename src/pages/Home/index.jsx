@@ -17,7 +17,7 @@ function Home(props) {
     },[])
     return (
     <>
-        <Topbar />
+        {/* <Topbar /> */}
         <div className="homeContainer">
         {/* <Sidebar /> */}
        <h1> What the people are listening to: </h1>

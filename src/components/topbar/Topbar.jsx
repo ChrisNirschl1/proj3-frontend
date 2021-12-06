@@ -1,11 +1,20 @@
+import React, {useState} from 'react'
 import "./topbar.css"
 import { Search, Person, Chat, Notifications } from "@material-ui/icons"
+import { Link } from "react-router-dom";
 
-export default function Topbar() {
+export default function Topbar(props) {
+   const userId = props.user
+   console.log(props)
+   console.log(userId)
+
+   
+
+
     return (
         <div className="topbarContainer">
             <div className="topbarLeft">
-                <span className="logo">soundByte</span>
+                <Link className="logo" to="/">soundByte</Link>
             </div>
             <div className="topbarCenter">
                 <div className="searchbar">
@@ -15,9 +24,14 @@ export default function Topbar() {
             </div>
             <div className="topbarRight">
                 <div className="topbarlinks">
-                    <span className="topbarlinks">Homepage</span>
+                <Link className="topbarlinks" to="/">Home</Link>
 
-                    <span className="topbarlinks">Timeline</span>
+                <Link className="topbarlinks" to="/newpost">New Post</Link>
+
+                <Link className="topbarlinks" to={`/profile/${userId}`}>Profile</Link>
+                
+
+             
                 </div>
                 <div className="topbarIcons">
                     <div className="topbarIconItem">
