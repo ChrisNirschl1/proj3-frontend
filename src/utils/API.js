@@ -32,6 +32,20 @@ const API = {
             }  
         } )
     
+    },
+    editPost:(postData, id ,token)=>{
+        return axios.put(`${URL_PREFIX}/api/posts/${id}`, postData, {
+            headers:{
+                "Authorization": `Bearer ${token}` 
+            }  
+        } )
+    
+    },
+    deletePost: (id,token)=>{
+        return axios.delete(`${URL_PREFIX}/api/posts/${id}`,{headers:{
+            "Authorization": `Bearer ${token}`
+          }})
+
     }
  
 }

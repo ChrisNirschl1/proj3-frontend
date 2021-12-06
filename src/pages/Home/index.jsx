@@ -7,7 +7,7 @@ import "./style.css"
 import API from "../../utils/API"
 import PostCard from "../../components/PostCard"
 
-function Home() {
+function Home(props) {
     const [post, setPost] = useState ([])
     //calling useEffect as this call below does not pertain to rendering something related to home
     useEffect(()=>{
@@ -22,7 +22,8 @@ function Home() {
         {/* <Sidebar /> */}
        <h1> What the people are listening to: </h1>
        <div className="postContainer">
-           {post.map(posty=> <PostCard key={posty.id} songname={posty.songname} description = {posty.description} />)}
+           {post.map(posty=> <PostCard key={posty.id} id={posty.id} songname={posty.songname} token = {props.token} userId={posty.UserId} description = {posty.description} canYouDelete={props.user.id===posty.UserId} canYouEdit={props.user.id===posty.UserId} />)}
+           
        </div>
         {/* <Rightbar /> */}
         </div>
