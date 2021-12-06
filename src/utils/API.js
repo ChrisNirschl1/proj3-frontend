@@ -17,13 +17,21 @@ const API = {
     signup:(usrData)=>{
         return  axios.post(`${URL_PREFIX}/signup`,usrData)
     },
-    // getUserData:(id)=>{
-    //     return axios.get(`${URL_PREFIX}/api/users/${id}/pets`)
-    // },
+    getUserData:(id)=>{
+        return axios.get(`${URL_PREFIX}/api/users/${id}/posts`)
+    },
 
     getAllPost: ()=>{
         return axios.get(`${URL_PREFIX}/api/posts`)
 
+    },
+    addPost:(postData,token)=>{
+        return axios.post(`${URL_PREFIX}/api/posts`, postData, {
+            headers:{
+                "Authorization": `Bearer ${token}` 
+            }  
+        } )
+    
     }
  
 }
