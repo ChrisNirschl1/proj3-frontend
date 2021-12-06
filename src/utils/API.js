@@ -20,6 +20,11 @@ const API = {
     // getUserData:(id)=>{
     //     return axios.get(`${URL_PREFIX}/api/users/${id}/pets`)
     // },
+
+    getAllPost: ()=>{
+        return axios.get(`${URL_PREFIX}/api/posts`)
+
+    }
  
 }
 
