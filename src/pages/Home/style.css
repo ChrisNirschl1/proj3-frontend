@@ -1,0 +1,12 @@
+.HomeContainer{
+    display: flex;
+    width: 100%;
+
+}
+
+.Home .postContainer{
+    display:flex;
+    flex-wrap: wrap;
+    width: 80vw;
+    margin: 0 auto;
+}
