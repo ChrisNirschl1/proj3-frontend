@@ -41,7 +41,7 @@ const history = useHistory();
         <div className="MakePost">
             {/* <div><Topbar /></div> */}
             <form onSubmit={handleFormSubmit}>
-                <input onChange={handleInputChange} value ={newPost.songname} name="songname" placeholder="What Song"/> 
+                <textarea onChange={handleInputChange} value ={newPost.songname} name="songname" placeholder="What Song"/> 
                 
                 <textarea onChange={handleInputChange} value ={newPost.description} name="description" placeholder="Thoughts on it?"/> 
                 <button>Send Post</button>
