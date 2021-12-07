@@ -26,7 +26,7 @@ function Home(props) {
            {post.map(posty=> <PostCard key={posty.id} id={posty.id} songname={posty.songname} token = {props.token} userId={posty.UserId} description = {posty.description} canYouDelete={props.user.id===posty.UserId} canYouEdit={props.user.id===posty.UserId} />)}
            
        </div>
-     <DataBar className="postContainer"></DataBar>
+     <DataBar className="dataContainer"></DataBar>
         </div>
         
     </>
