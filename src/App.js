@@ -6,8 +6,8 @@ import LoginForm from "./components/LoginForm";
 import SignupForm from "./components/SignupForm";
 import Profile from "./pages/Profile";
 import MakePost from './pages/MakePost';
-import Topbar from "./components/topbar/Topbar"
-
+import Topbar from "./components/topbar/Topbar";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 import {
   BrowserRouter as Router,
@@ -147,13 +147,7 @@ function App() {
       {!userState.email ? (
 
         <div>
-          <h3>Login</h3>
-          <LoginForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} />
-
-          <h2>Or</h2>
-
-          <h3>Signup</h3>
-          <SignupForm submit={handleSignupSubmit} change={handleSignupChange} signupState={signupFormState} />
+          <SignupForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} signSubmit={handleSignupSubmit} signChange={handleSignupChange} signupState={signupFormState}/>
         </div>
       ) : (
         <div>
@@ -187,3 +181,10 @@ export default App;
 
   //<Register/>
 
+  //<h3>Login</h3>
+  //<LoginForm submit={handleLoginSubmit} change={handleLoginChange} loginState={loginFormState} />
+//
+  //<h2>Or</h2>
+//
+  //<h3>Signup</h3>
+  //<SignupForm submit={handleSignupSubmit} change={handleSignupChange} signupState={signupFormState} />
