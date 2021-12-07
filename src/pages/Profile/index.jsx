@@ -33,7 +33,6 @@ export default function Profile(props) {
                 <div>
         {/* <Topbar /> */}
         <div className="profile">
-        <Sidebar />
             <div className="profileRight">
                 <div className="profileRightTop">
                     <div className="profileCover">
@@ -42,8 +41,8 @@ export default function Profile(props) {
                     <img className="profileUserImg" src="./assets/1.jpeg" alt="" />
                     </div>
                 <div className="profileInfo">
-                <h4 className="profileInfoName" >Welcome to {user.email}'s page </h4>
-                <span className="profileInfoDesc" >Yo fellow humans I'm definitely not a lizard person my dudes</span>
+                <h4 className="profileInfoName" >Welcome to {user.email}'s page!</h4>
+                <span className="profileInfoDesc" ></span>
                 </div>
                 <div className="postContainer">
                 {user.Posts.map(posty=><PostCard key={posty.id} songname={posty.songname} canYouDelete={props.user.id===posty.UserId} id={posty.id} canYouEdit={props.user.id===posty.UserId} token={props.token} description = {posty.description}/>)}
