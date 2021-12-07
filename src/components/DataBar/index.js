@@ -3,6 +3,7 @@ import { Users, Posts } from "../../dummydata.js";
 import { useState } from 'react';
 import API from "../../utils/API"
 import DataCard from "../DataCard"
+import { Search} from "@material-ui/icons"
 
 //TESTING ON topbar/Topbar.jsx
 //Search functionality by username
@@ -37,11 +38,13 @@ export default  function DataBar() {
 
     return (
         <div>
+            <div className="Searchbar">
         <form onSubmit={handleFormSubmit}>
         <input onChange={handleInputChange} value ={citySearch.city} name="city" placeholder="Search your city"/> 
         <button>Search!</button>
     </form>
-    <div className="postContainer">
+    </div>
+    <div >
     {brewList.map(posty=> <DataCard key={posty.id} id={posty.id} name={posty.name}   street = {posty.street} phone = {posty.phone} />)}
     </div>
 
