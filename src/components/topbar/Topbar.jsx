@@ -29,6 +29,8 @@ export default function Topbar(props) {
                 <Link className="topbarlinks" to="/newpost">New Post</Link>
 
                 <Link className="topbarlinks" to={`/profile/${userId}`}>Profile</Link>
+
+                
                 
 
              

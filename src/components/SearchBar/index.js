@@ -1,4 +1,4 @@
-import "../SearchBar/style.css";
+// import "../SearchBar/style.css";
 import { Users, Posts } from "../../dummydata.js";
 import { useState } from 'react';
 
