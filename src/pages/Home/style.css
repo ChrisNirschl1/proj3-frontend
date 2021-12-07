@@ -8,5 +8,11 @@
     display:flex;
     flex-wrap: wrap;
     width: 80vw;
-    margin: 0 auto;
+    flex-basis: 100px;
+  height: 100px;
+  margin: 5px;
 }
+
+
+
+
